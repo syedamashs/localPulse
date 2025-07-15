@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - LocalPulse</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+      }
+      .left {
+        background: linear-gradient(135deg, #a18cd1, #3fada8);
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        flex-direction: column;
+        padding: 2rem;
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9;
+      }
+      .login-box {
+        width: 100%;
+        max-width: 400px;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        margin-bottom: 1rem;
+      }
+      .input-group {
+        margin-bottom: 1rem;
+      }
+      .input-group label {
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 0.6rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .forgot {
+        text-align: right;
+        margin-bottom: 1rem;
+      }
+      .forgot a {
+        color: purple;
+        text-decoration: none;
+      }
+      .btn {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .divider {
+        text-align: center;
+        margin: 1.5rem 0;
+        position: relative;
+      }
+      .divider::before,
+      .divider::after {
+        content: "";
+        height: 1px;
+        background: #ccc;
+        width: 40%;
+        position: absolute;
+        top: 50%;
+      }
+      .divider::before {
+        left: 0;
+      }
+      .divider::after {
+        right: 0;
+      }
+      .social {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .social button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        padding: 0.7rem;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .google {
+        background-color: #00796b;
+        color: white;
+      }
+      .facebook {
+        background-color: #00796b;
+        color: white;
+      }
+      .signup {
+        margin-top: 1rem;
+        text-align: center;
+      }
+      .signup a {
+        color: purple;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <h1>Discover Your Next Adventure</h1>
+      <p>
+        LocalPulse connects you to the most vibrant parties and events around
+        the globe. Join the fun!
+      </p>
+    </div>
+    <div class="right">
+      <div class="login-box">
+        <h2>Login to LocalPulse</h2>
+        <form>
+          <div class="input-group">
+            <label for="email">Email or Username</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="Enter your email or username"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div class="forgot">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <a href="loggedinhome.html" class="btn">Log in</a>
+        </form>
+
+        <div class="divider">Or continue with</div>
+
+        <div class="social">
+          <button class="google">🌐 Login with Google</button>
+          <button class="facebook">📘 Login with Facebook</button>
+        </div>
+
+        <div class="signup">
+          Don't have an account? <a href="register.html">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

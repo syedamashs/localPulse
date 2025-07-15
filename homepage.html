@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocalPulse - Homepage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>LocalPulse</h1>
+    <nav>
+      <a href="homepage.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Discover the Hottest Parties & Events Near You!</h2>
+    <p>Find energetic, trustworthy, and fun experiences tailored for youth and travelers.</p>
+    <div class="search-box">
+      <input type="text" placeholder="Search by location or event type..." />
+      <button>Search</button>
+    </div>
+  </section>
+
+  <section class="interests">
+    <h3>Explore Interests</h3>
+    <div class="icons">
+      <div><span>🎵</span><p>Music</p></div>
+      <div><span>🍽️</span><p>Food</p></div>
+      <div><span>🎉</span><p>Parties</p></div>
+      <div><span>💼</span><p>Business</p></div>
+      <div><span>🎨</span><p>Hobbies</p></div>
+    </div>
+  </section>
+
+  <section class="events">
+    <h3>Upcoming Events</h3>
+    <div class="event-grid">
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" />
+        <h4>Summer Beach Party</h4>
+        <p>Miami Beach, FL<br />July 20, 2024</p>
+        <a href="event-details.html">Join Event</a>
+      </div>
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1549921296-3a6b92a8f6ec" />
+        <h4>Downtown Music Fest</h4>
+        <p>Central Park, NYC<br />August 10, 2024</p>
+        <a href="event-details.html">Join Event</a>
+      </div>
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1515169067865-5387ec356754" />
+        <h4>Tech Innovators Meetup</h4>
+        <p>Silicon Valley, CA<br />September 5, 2024</p>
+        <a href="event-details.html">Join Event</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 LocalPulse. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+<!-- style.css -->
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  background: white;
+  color: #333;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar h1 {
+  color: orange;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.hero {
+  background: linear-gradient(to right, #ff7e5f, #feb47b, #4dd0e1);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.search-box {
+  margin-top: 1rem;
+}
+
+.search-box input {
+  padding: 10px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  width: 250px;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  border-radius: 0 20px 20px 0;
+  border: none;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+}
+
+.interests {
+  padding: 2rem;
+  text-align: center;
+}
+
+.interests .icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.icons div {
+  text-align: center;
+  color: orange;
+}
+
+.events {
+  padding: 2rem;
+  background-color: #fafafa;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.event-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+}
+
+.event-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.event-card h4 {
+  margin: 0.5rem 1rem 0 1rem;
+  color: #000;
+}
+
+.event-card p {
+  font-size: 0.9rem;
+  margin: 0.5rem 1rem;
+  color: #666;
+}
+
+.event-card a {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  background: orange;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+}
+</style>
