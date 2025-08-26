@@ -1,0 +1,192 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.navbar {
+  background: #1e1e2f;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+}
+
+.navbar nav a {
+  color: #ccc;
+  margin-left: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 4px;
+  width: 250px;
+}
+
+.search-box button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #fff;
+  color: #ff4b2b;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Interests Section */
+.interests {
+  padding: 2rem;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.interests h3 {
+  margin-bottom: 1rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.icon-item {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Events Section */
+.events {
+  padding: 2rem;
+}
+
+.events h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.event-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.03);
+}
+
+.event-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.event-info {
+  padding: 1rem;
+}
+
+.event-info h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #ff4b2b;
+}
+
+.join-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff4b2b;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: #e84321;
+}
+
+/* Footer */
+footer {
+  background-color: #1e1e2f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer nav a {
+  color: #ccc;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+footer nav a:hover {
+  color: #fff;
+}

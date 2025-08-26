@@ -1,182 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register | LocalPulse</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Inter', sans-serif;
-      }
+<html lang="en" ng-app="localPulseApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - LocalPulse</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .fade-in { animation: fadeIn 1s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .shake { animation: shake 0.4s; }
+    @keyframes shake {
+      10%, 90% { transform: translateX(-2px); }
+      20%, 80% { transform: translateX(4px); }
+      30%, 50%, 70% { transform: translateX(-8px); }
+      40%, 60% { transform: translateX(8px); }
+    }
+    .form-error { color: #e74c3c; font-size: 0.95em; }
+    .auth-form { max-width: 350px; margin: 60px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #0001; padding: 2em; }
+    .auth-form input { width: 100%; margin-bottom: 1em; padding: 0.7em; border-radius: 6px; border: 1px solid #ddd; }
+    .auth-form button { background: #ff5a5f; color: #fff; border: none; padding: 0.7em 2em; border-radius: 6px; cursor: pointer; }
+    .auth-form button:disabled { background: #ccc; }
+    .auth-form h2 { color: #ff5a5f; }
+    body { background: linear-gradient(to right, #ff416c, #ff4b2b); }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="RegisterController">
 
-      body {
-        display: flex;
-        min-height: 100vh;
-        background-color: #f9fafb;
-      }
+  <header class="navbar">
+    <h1>LocalPulse</h1>
+    <nav>
+      <a href="indexx.html">Home</a>
+      <a href="#">Events</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
 
-      .left {
-        flex: 1;
-        background: linear-gradient(to bottom right, #a855f7, #06b6d4);
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-      }
-
-      .left h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
-      .left p {
-        font-size: 1.1rem;
-        max-width: 360px;
-        text-align: center;
-      }
-
-      .right {
-        flex: 1;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 3rem;
-      }
-
-      .form-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-
-      .form-group {
-        margin-bottom: 1rem;
-      }
-
-      .form-group label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-      }
-
-      .form-group input {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #d1d5db;
-        border-radius: 0.375rem;
-      }
-
-      .register-btn {
-        background-color: #7c3aed;
-        color: white;
-        width: 100%;
-        padding: 0.75rem;
-        border: none;
-        border-radius: 0.375rem;
-        font-weight: 600;
-        margin-top: 1rem;
-        cursor: pointer;
-      }
-
-      .divider {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin: 2rem 0;
-      }
-
-      .divider::before,
-      .divider::after {
-        content: '';
-        flex: 1;
-        border-bottom: 1px solid #d1d5db;
-      }
-
-      .divider span {
-        margin: 0 1rem;
-        color: #6b7280;
-      }
-
-      .social-btn {
-        width: 100%;
-        padding: 0.75rem;
-        border: none;
-        border-radius: 0.375rem;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-
-      .google-btn {
-        background-color: #0f766e;
-        color: white;
-      }
-
-      .facebook-btn {
-        background-color: #0369a1;
-        color: white;
-      }
-
-      .footer-text {
-        text-align: center;
-        margin-top: 1rem;
-        font-size: 0.95rem;
-      }
-
-      .footer-text a {
-        color: #7c3aed;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="left">
-      <h1>Join the LocalPulse Community!</h1>
-      <p>
-        Sign up now to discover and create amazing events near you.
-      </p>
-    </div>
-    <div class="right">
-      <h2 class="form-title">Create Your Account</h2>
-      <form>
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="Enter your full name" required />
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="Enter your email address" required />
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" placeholder="Create a password" required />
-        </div>
-        <div class="form-group">
-          <label>Confirm Password</label>
-          <input type="password" placeholder="Confirm your password" required />
-        </div>
-        <button class="register-btn" type="submit">Register</button>
-      </form>
-      <div class="divider"><span>Or continue with</span></div>
-      <button class="social-btn google-btn">🌐 Register with Google</button>
-      <button class="social-btn facebook-btn">📘 Register with Facebook</button>
-      <div class="footer-text">
-        Already have an account? <a href="login.html">Login</a>
+  <main>
+    <form name="registerForm" class="auth-form fade-in" ng-submit="register()" novalidate ng-class="{'shake': registerError}">
+      <h2>Register</h2>
+      <input type="text" name="username" ng-model="user.username" placeholder="Username" required />
+      <div class="form-error" ng-show="registerForm.username.$touched && registerForm.username.$invalid">
+        Username is required.
       </div>
-    </div>
-  </body>
+      <input type="email" name="email" ng-model="user.email" placeholder="Email" required />
+      <div class="form-error" ng-show="registerForm.email.$touched && registerForm.email.$invalid">
+        Valid email is required.
+      </div>
+      <input type="password" name="password" ng-model="user.password" placeholder="Password" ng-minlength="5" required />
+      <div class="form-error" ng-show="registerForm.password.$touched && registerForm.password.$invalid">
+        Password (min 5 chars) is required.
+      </div>
+      <input type="password" name="confirm" ng-model="user.confirm" placeholder="Confirm Password" required />
+      <div class="form-error" ng-show="user.password !== user.confirm && registerForm.confirm.$touched">
+        Passwords do not match.
+      </div>
+      <div class="form-error" ng-show="registerError">
+        Registration failed! Try again.
+      </div>
+      <button type="submit" ng-disabled="registerForm.$invalid || user.password !== user.confirm">Register</button>
+      <p style="margin-top:1em;">Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </main>
+
+  <script>
+    var app = angular.module('localPulseApp', []);
+    app.controller('RegisterController', function($scope, $timeout) {
+      $scope.user = {};
+      $scope.registerError = false;
+      $scope.register = function() {
+        if ($scope.user.username && $scope.user.email && $scope.user.password === $scope.user.confirm) {
+          window.location.href = 'login.html';
+        } else {
+          $scope.registerError = true;
+          $timeout(function() { $scope.registerError = false; }, 700);
+        }
+      };
+    });
+  </script>
+</body>
 </html>
