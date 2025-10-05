@@ -196,50 +196,13 @@ export default function Creator() {
               New Event
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                name="title"
-                placeholder="Event Title"
-                value={form.title}
-                onChange={handleChange}
-                className="w-full border rounded-lg px-3 py-2"
-                required
-              />
-              <textarea
-                name="description"
-                placeholder="Event Description"
-                value={form.description}
-                onChange={handleChange}
-                className="w-full border rounded-lg px-3 py-2"
-                required
-              />
+              <input type="text" name="title" placeholder="Event Title" value={form.title} onChange={handleChange} className="w-full border rounded-lg px-3 py-2" required />
+              <textarea name="description" placeholder="Event Description" value={form.description} onChange={handleChange} className="w-full border rounded-lg px-3 py-2" required/>
               <label className="block font-semibold text-gray-700">Start Date</label>
-              <input
-                type="date"
-                name="startDate"
-                value={form.startDate}
-                onChange={handleChange}
-                className="w-full border rounded-lg px-3 py-2"
-                required
-              />
+              <input type="date" name="startDate" value={form.startDate} onChange={handleChange} className="w-full border rounded-lg px-3 py-2" required />              
               <label className="block font-semibold text-gray-700">End Date</label>
-              <input
-                type="date"
-                name="endDate"
-                value={form.endDate}
-                onChange={handleChange}
-                className="w-full border rounded-lg px-3 py-2"
-                required
-              />
-              <input
-                type="text"
-                name="city"
-                placeholder="Event City"
-                value={form.city}
-                onChange={handleChange}
-                className="w-full border rounded-lg px-3 py-2"
-                required
-              />
+              <input type="date" name="endDate" value={form.endDate} onChange={handleChange} className="w-full border rounded-lg px-3 py-2"required/>
+              <input type="text" name="city" placeholder="Event City" value={form.city} onChange={handleChange} className="w-full border rounded-lg px-3 py-2" required/>
               <input
                 type="url"
                 name="registrationUrl"

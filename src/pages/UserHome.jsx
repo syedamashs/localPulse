@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Link } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 
 export default function UserHome() {
@@ -70,25 +71,15 @@ export default function UserHome() {
       <header className="bg-[#1e1e2f] text-white px-6 py-4 flex justify-between items-center flex-wrap">
         <h1 className="text-2xl font-bold">LocalPulse</h1>
         <nav className="flex gap-6 items-center">
-          <a href="#" className="text-gray-300 hover:text-white">
-            Home
-          </a>
-          <a
-            href="#"
-            className="text-gray-300 hover:text-white"
+          <Link to="/user" className="text-gray-300 hover:text-white">Home</Link>
+          <Link to="/user" className="text-gray-300 hover:text-white"
             onClick={(e) => {
               e.preventDefault();
               eventsRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
-          >
-            Events
-          </a>
-          <a href="/about" className="text-gray-300 hover:text-white">
-            About
-          </a>
-          <a href="/contact" className="text-gray-300 hover:text-white">
-            Contact
-          </a>
+          > Events</Link>
+          <Link to="/about" className="text-gray-300 hover:text-white">About</Link>
+          <Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link>
           <span className="ml-4 flex items-center space-x-2">
             <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-lg font-bold">
               {user && user.username ? user.username[0].toUpperCase() : "?"}

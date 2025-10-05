@@ -1,27 +1,27 @@
 // server.js
 import express from "express";
 import mongoose from "mongoose";
-import bodyParser from "body-parser";
 import multer from "multer";
-import fetch from "node-fetch"; // already imported
 import fs from "fs";
+import fetch from "node-fetch";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const dropbox = process.env.DROPBOX_API;
+const mongodb = process.env.MONGODB_API;
 
 const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:5173", // frontend port (Vite default)
-    credentials: true,
-  })
-);
-app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
 
 // 1️⃣ MongoDB Atlas connection
 mongoose
   .connect(
-    "mongodb+srv://syedamash:Amash2005@test.vkgl2cz.mongodb.net/localpulse?retryWrites=true&w=majority&appName=test",
+    mongodb ,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -70,7 +70,7 @@ const upload = multer({ dest: "uploads/" });
 // 4️⃣ Dropbox Upload Function
 async function uploadToDropbox(filePath, fileName) {
   
-  const dropboxAccessToken = "sl.u.AF_WJJesjUdhyVXUpyHlqyU9K3FcKY1QIopZ7db5XyDWo8v-QYL2SaLPWS2BCGh5ytTW0htEm8n64EbRzuGrGwMqWZTjjLbKXzYPDIPGocnVcgaWKUGf2G7HaaEklirEFKdVICmLxZ1ZZujMAj1a5S2oOs31nkmYh-51ikpxWI9PWm_l0Belmrya86ktwgB3xHG-3ol2u6NbhWG7cPxbUHbYVhBhYlE95hM2ebD3IBj3AHPHCLXOuLS1w9seHBoz7gCvVkBrEClnFgl5SuaEZdphDsm_e7z2lt7ixT_gEk8MwelpAYMAEZRPwTjNhO2nRdwEYoriPbmhLlAiEAF33O2LVbzIJBQeMzNiV16QeX9W8a5-_9fRPoSkqNRClmUIJbYrtrMQ10htAYGxtdfQSgeCjyl1EFkViT8iBGtwK6Bof4DD-VHhLjLDgEO8-bu7aIxu7NxHHKqc2CadBCBWT4m2Qg4D3ivrF9ax-ZlZBApGhabx54Q5o2LGU6etY9KTaK5uxuerluRH3CfWHP2jHT13lj0KvFStcobP5vIM1agEdTCFzW7jl4fkMNEaiZNgDQajXwpsEpGPEXjG3IGA93JZg1QVMr82yGmVm-eKSW0bce-RzwZi6-82AJtK4Uz2V7ZIRXF-tC1-IUniGYZJqXkAhEaQlpNLPiJhzcOs7bHORfaHQKM2b-MfpxvpGReENyr3krbrMISOdGjHL2e0Mzbe5YLb9kMv8u4JdJdfuX23LDsotB7-hc2hhAXF1Q9ExJGtKb0yjoCwa8hE70Xl6Z-NZ40959fQiYfC230173-yzXONOChwiMwV_1zLYjd1sJdm6KTpPj8_-wp_xnTZThZF4Z7Fe_cdEzSkqfdWtbhCw-OH65W2SAMyl8-La0g_bkOph92TZ9_5CZp0fvn6GScLyhe2aNPJwyJLaTqqoDhHeAigtEF70u18LnC03DfpXGxOgZzser5hLDSLXCIvcYksb5L7sLpj-XpqNLnK6xxSNMImEUTQ45tr2veSkMBQHQ1jclMA0qlS46cUqDvWFt09aUEes8JqLJiLiT0Sed8BhfYYnKdFKCLutAWfeufxFC0YZ54P_f3GbfB9MBzH-kwdzPxN2NdkTDS6esFa1wCiNLxqzhuhLcBym6ZVMlIf7SOckevSB1RiQq33bB_7GbLDHhfbuMGwnFpXO6KPri7Vzgz2RcnEtii5HDHPwSu6RYgnzfcs14id5kjb8jgIT_s8kgPqDzFUj_6cqfJ5-qRFXYEvpso7BDPhClwgvSI03QyskfAXAJkShkIQcJKi7QXyL4LjIGu3vaKEFfAl7DC5OJIGirD5Z3JcORoKgbTicvE8o0kI0LiGBspzsrbItN7ra5JdLbUcxJAcOM0SQ-QK_CSYDLoLSztqy_Dkpe39QHmLx21KmK6phzj9XtdkEDFIHj6duxAc5UkINDPgrBQpFw";
+  const dropboxAccessToken = dropbox;
   const fileContent = fs.readFileSync(filePath);
 
   // Upload to Dropbox
@@ -328,7 +328,6 @@ app.post("/api/contact", async (req, res) => {
 });
 
 // 8️⃣ Start Server
-const PORT = 5000;
-app.listen(PORT, () =>
-  console.log(`🚀 Server running on http://localhost:${PORT}`)
+app.listen(5000, () =>
+  console.log(`🚀 Server running on http://localhost:5000`)
 );
