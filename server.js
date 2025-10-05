@@ -21,7 +21,7 @@ app.use(express.json());
 // 1️⃣ MongoDB Atlas connection
 mongoose
   .connect(
-    mongodb ,
+    mongodb,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
